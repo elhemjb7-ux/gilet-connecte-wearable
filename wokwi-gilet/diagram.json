@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Gilet connecté — démonstrateur",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -110, "left": 180, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 120, "left": 180, "attrs": {} },
+    { "type": "wokwi-buzzer", "id": "bz1", "top": -60, "left": -160, "attrs": { "volume": "0.3" } }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "dht1:SDA", "esp:15", "green", [ "v0" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "pot1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "pot1:SIG", "esp:34", "orange", [ "v0" ] ],
+    [ "bz1:1", "esp:25", "blue", [ "v0" ] ],
+    [ "bz1:2", "esp:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

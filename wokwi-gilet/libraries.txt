@@ -1,0 +1,3 @@
+PubSubClient@2.8
+DHT sensor library@1.4.6
+ArduinoJson@7.2.0
